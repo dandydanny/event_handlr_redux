@@ -16,7 +16,8 @@ gem 'shotgun'
 
 gem 'rake'
 
-gem 'bcrypt-ruby', '3.0.0'
+# has_secure_password
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 group :test do
   gem 'faker'

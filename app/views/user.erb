@@ -1,10 +1,9 @@
-<div class="container">
-  <h1>User: <%= @user.first_name %></h2>
+  <h1><%= @user.first_name %>'s Profile</h2>
   <p>Full Name: <%= @user.first_name %> <%= @user.last_name %></p>
   <p>Birthday: <%= @user.birthdate %></p>
   <p>Email: <%= @user.email %></p>
 
-<table id="userevents">
+<table id="eventtable">
     <!-- list names from event -->
       <tr>
         <td>Event Name:</td>
@@ -15,7 +14,7 @@
         <td>Edit</td>
         <td>Delete</td>
       </tr>
-      
+
       <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
@@ -23,20 +22,16 @@
         <td><%= event.starts_at %></td>
         <td><%= event.ends_at %></td>
         <td>
-          <% if @sameuser == true %>
-            <a href="/delete/<%= event.id %>">Delete</a>
+          <% if Event.find(event.id).event_attendance.present? %>
+            Yes
+          <% else %>
+            <a href="/attend/<%= event.id %>">Attend!</a>
           <% end %>
         </td>
         <td><a href="">Edit</a></td>
         <td><a href="/delete/<%= event.id %>">Delete</a></td>
 
       </tr>
-      
+
     <% end %>
 </table>
-
-
-
-
-
-</div>

@@ -1,20 +1,19 @@
-<div class="container">
-  <p>Welcome, please login:</p>
-  <div id="warning"><%= @loginerror %></div>
+<h2>Welcome, please login:</h2>
+<div id="warning"><%= @loginerror %></div>
 
- <form id="loginform" action="/" method="POST">
-    <input id="textfield" type="text" name="email" placeholder="EMAIL" ><br>
-    <input id="textfield" type="password" name="password" placeholder="PASSWORD"><br>
+<form id="loginform" action="/" method="POST">
+    <label>Email: <br><input id="textfield" type="text" name="email" placeholder="eg. someone@someplace.com" autofocus></label><br>
+    <label>Password: <br><input id="textfield" type="password" name="password" placeholder="eg. password"></label><br>
     <input id="loginbutton" type="submit" value="&#8594;">
- </form>
-<p>New here? Sign up!</p>
+</form>
+<h2>New here? Sign up!</h2>
 <div id="warning"><%= @signuperror %></div>
- <form id="signupform" action="/signup" method="POST">
-    <input id="textfield" type="text" name="first_name" placeholder="FIRST NAME"><br>
-    <input id="textfield" type="text" name="last_name" placeholder="LAST NAME"><br>
-    <input id="textfield" type="text" name="email" placeholder="EMAIL" ><br>
-    <input id="textfield" type="text" name="birthdate" placeholder="BIRTHDAY"><br>
-    <input id="textfield" type="password" name="password" placeholder="CREATE A PASSWORD"><br>
+<form id="signupform" action="/signup" method="POST">
+    <label>First Name: <br><input id="textfield" type="text" name="first_name" placeholder="eg. Shibu"></label><br>
+    <label>Last Name: <br><input id="textfield" type="text" name="last_name" placeholder="eg. Inu"></label><br>
+    <label>Email: <br><input id="textfield" type="text" name="email" placeholder="eg. someone@someplace.com" ></label><br>
+    <label>Birthday: <br><input id="textfield" type="text" name="birthdate" placeholder="eg. 7 Mar 1988"></label><br>
+    <label>Desired Password (6 or more characters): <br><input id="textfield" type="password" name="password" placeholder="Don't reuse passwords."></label><br>
+     <label>Retype password: <br><input id="textfield" type="password" name="password_confirmation" placeholder="Needs to be the same as above."></label><br>
     <input id="signupbutton" type="submit" value="&#8594;">
- </form>
-</div>
+</form>

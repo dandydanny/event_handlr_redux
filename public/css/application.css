@@ -1,51 +1,119 @@
 .container {
-    margin: 20px auto;
-    width: 1000px;
-    padding: 0px 20px 20px 20px;
-    border: 1px dotted black;
-  }
-  th {
-    text-align: left;
-  }
+  position: relative;
+  top: 50px;
+  margin: 20px auto;
+  width: 1000px;
+  padding: 0px 20px 20px 20px;
+  /*border: 1px dotted black;*/
+}
 
-  #warning {
-    color: red;
-  }
+th {
+  text-align: left;
+}
 
-  #status {
-    color: green;
-  }
+#warning {
+  color: red;
+}
 
-  td {
-    border-style: solid;
-    border-width: 3;
-    border-color: white;
-    padding: 5px;
-    border-spacing: 3px;
-    background-color: LightGray;
-  }
+#status {
+  color: green;
+}
 
-  #userevents td {
-    border-style: solid;
-    border-width: 3;
-    border-color: white;
-    padding: 5px;
-    border-spacing: 3px;
-    background-color: LightGray;
-  }
+#eventtable tr {
+  border-top: 1px solid lightgray;
+}
 
-  .navbar {
-    padding: 10px;
-    background-color: gray;
-    color: white;
-  }
+#eventtable td {
+  /*border-style: solid;*/
+  /*border-width: 3;*/
+  /*border-color: white;*/
+  padding: 5px;
+  border-spacing: 3px;
+/*  background-color: LightGray;*/
+}
 
-  .navbar a{
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-  }
+#userevents td {
+  border-style: solid;
+  border-width: 3;
+  border-color: white;
+  padding: 5px;
+  border-spacing: 3px;
+  background-color: LightGray;
+}
 
-  .navbar a:hover{
-    color: orange;
-  }
+.navbar {
+  height: 50px;
+  padding: 10px;
+  /*background-color: black;*/
+  color: indigo;
+  box-shadow: 0 0 50px gray;
+}
+
+/*.navbar a{
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}*/
+
+.navbar a:hover{
+  color: orange;
+}
+
+.footer {
+  position: relative;
+  top: 60px;
+  text-align: center;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 100;
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 100;
+  margin: 10px 0;
+}
+
+body {
+  font-weight: 400;
+  color: dimgray;
+}
+
+#logo {
+  margin: 0;
+  display: inline-block;
+}
+
+#logo h1 {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+#logo i {
+  font-size: 35px;
+}
+#user_crumb {
+  display: inline-block;
+  float: right;
+}
+
+input {
+  /*width: 300px;*/
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}

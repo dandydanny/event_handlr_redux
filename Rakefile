@@ -89,13 +89,13 @@ namespace :db do
   desc "Create the database at #{DB_NAME}"
   task :create do
     puts "Creating database #{DB_NAME} if it doesn't exist..."
-    exec("touch #{DB_NAME}")
+    system("touch #{DB_NAME}")
   end
 
   desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping database #{DB_NAME}..."
-    exec("rm #{DB_NAME}")
+    system("rm #{DB_NAME}")
   end
 
   desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
@@ -110,6 +110,10 @@ namespace :db do
   desc "Populate the database with dummy data by running db/seeds.rb"
   task :seed do
     require APP_ROOT.join('db', 'seeds.rb')
+  end
+
+  desc "Drop, create, migrate, and seed the DB"
+    task :reset => [:drop, :create, :migrate, :seed] do
   end
 
   desc "Returns the current schema version number"

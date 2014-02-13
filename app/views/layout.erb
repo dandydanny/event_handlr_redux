@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/application.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,400,700,900' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   <script src="/js/application.js"></script>
-
-  <title></title>
+  <link rel="icon" href="/favicon128.png">
+  <title>Event Handlr Redux</title>
 </head>
+
 <body>
+
   <div class="navbar">
-  <a href="/"><h2>EventHandlr</h2></a>
-  <%= @greetuser %> &#9829; <a href="/dashboard">DASHBOARD</a> &#9830; <a href="/logout">LOGOUT</a>
-</div>
-  <%= yield %>
+    <div id="logo"><a href="/"><i class="fa fa-calendar"></i> <h1>EventHandlr Redux</h1></a></div>
+    <div id="user_crumb">
+    <%= @greetuser %> <i class="fa fa-user"></i> <a href="/dashboard">DASHBOARD</a> <i class="fa fa-sign-out"></i> <a href="/logout">LOGOUT</a>
+    </div>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
+  <div class="footer">
+    <p><a href="http://www.twitter.com/dandydanny">@dandydanny</a> got his hands dirty making this at Dev Bootcamp Chicago in 2014.</p>
+  </div>
+
 </body>
+
 </html>

@@ -28,12 +28,14 @@ post '/signup' do
   @email = params[:email]
   @birthdate = params[:birthdate]
   @password = params[:password]
+  @password_confirmation = params[:password_confirmation]
 
   @user = User.new(
     first_name: @first_name,
     last_name: @last_name,
     email: @email,
     birthdate: @birthdate,
+    password_confirmation: @password_confirmation
   )
   @user.password = params[:password]
   @user.save!
@@ -45,14 +47,14 @@ post '/signup' do
 
   redirect "/dashboard"
 
-  # if @user
-  #   session[:user_id] = @user.id
-  #   redirect_to("/dashboard")
-  # else
-  #   @signuperror = "Sorry, I can't sign you up with the information provided."
-  #   erb :index
-  # end
-  erb :index
+  if @user
+    session[:user_id] = @user.id
+    redirect_to("/dashboard")
+  else
+    @signuperror = "Sorry, I can't sign you up with the information provided."
+    erb :index
+  end
+  # erb :index
 end
 
 # user dashboard
@@ -67,13 +69,14 @@ get '/dashboard' do
   end
 end
 
-get "/logout" do 
+get "/logout" do
   session.clear
   redirect '/'
 end
 
 post '/addevent' do
-  Event.create(name: params[:name], location: params[:location], starts_at: params[:starts_at], ends_at: params[:ends_at], user_id: session[:user_id])
+  @event = Event.create(name: params[:name], location: params[:location], starts_at: params[:starts_at], ends_at: params[:ends_at], user_id: session[:user_id])
+  redirect("/dashboard")
 end
 
 get '/delete/:id' do
