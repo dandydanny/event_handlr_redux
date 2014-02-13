@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Editing <%= @event.name %></h2>
+
+  <table>
+    <tr>
+      <form action="/edit/<%= @event.id %>" method="post">
+      <td><input id="textfield" type="text" name="name" value="<%= @event.name%>"></td><td><input id="textfield" type="text" name="location" value="<%= @event.location%>" ></td>
+      <td><input id="textfield" type="text" name="starts_at" value="<%= @event.starts_at%>"></td>
+      <td><input id="textfield" type="text" name="ends_at" value="<%= @event.ends_at%>"></td>
+      <td><input id="editeventbutton" type="submit" value="Save"></td>
+      </form>
+    </tr>
+  </table>
+
+
+
+</div>

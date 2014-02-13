@@ -1,0 +1,69 @@
+To Do's
+
+Part 1 Auth
+------------------------------------
+AR validation
+
+Every user has an email
+  active record check not nill
+Every user's email is unique
+  active record check email unique
+Every email looks like * @ *.*
+  active record check email validity
+Every user has a password
+  check hashed password not nill
+
+
+Sign up as a new user
+  User.create
+Log in as an existing user
+  session key
+Log out as an existing user
+  Session.clear
+
+Part 2 Events
+------------------------------------
+Assocaitions - ok
+has_one
+has_many
+belongs_to
+  User
+    has many events
+    has many event attendances
+  Event
+    belongs to user
+    has many event attendance
+  EventAttendance
+    belongs to event
+    belongs to user
+
+Write assoc. for
+  user.created_events
+  user.attended_events
+
+
+Part 3 CRUD
+------------------------------------
+Create view and controller for:
+create event
+  can be on same page as dashboard
+  serialize inputs / JSON
+edit event
+  Change name, location, time, etc
+destroy event
+  Event.find(event_id).destroy 
+
+Part 4 AJAXify
+------------------------------------
+In events_created_by_user page,
+add form to create new event, but without refresh
+  jQuery bind to "create this event" button click
+  event.preventDefault(); prevent refresh
+  write to db
+  "add more events" button will append() html code to
+  produce more fields, without refreshing page
+  serialize input
+
+
+
+

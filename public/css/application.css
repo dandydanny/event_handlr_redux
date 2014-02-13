@@ -1,0 +1,51 @@
+.container {
+    margin: 20px auto;
+    width: 1000px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+
+  #warning {
+    color: red;
+  }
+
+  #status {
+    color: green;
+  }
+
+  td {
+    border-style: solid;
+    border-width: 3;
+    border-color: white;
+    padding: 5px;
+    border-spacing: 3px;
+    background-color: LightGray;
+  }
+
+  #userevents td {
+    border-style: solid;
+    border-width: 3;
+    border-color: white;
+    padding: 5px;
+    border-spacing: 3px;
+    background-color: LightGray;
+  }
+
+  .navbar {
+    padding: 10px;
+    background-color: gray;
+    color: white;
+  }
+
+  .navbar a{
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+  }
+
+  .navbar a:hover{
+    color: orange;
+  }

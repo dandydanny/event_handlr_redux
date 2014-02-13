@@ -1,0 +1,46 @@
+<div class="container">
+<h1>Dashboard</h1>
+
+<table id="eventtable">
+    <!-- list names from event -->
+      <tr>
+        <td>Event Name:</td>
+        <td>Host:</td>
+        <td>Where:</td>
+        <td>Start:</td>
+        <td>End:</td>
+        <td>Attended?</td>
+        <td>Edit</td>
+        <td>Delete</td>
+      </tr>
+      
+      <% @event.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><a href="/user/<%= event.user.id %>"><%= event.user.first_name %></a></td>
+        <td><%= event.location %></td>
+        <td><%= event.starts_at %></td>
+        <td><%= event.ends_at %></td>
+        <td>
+          <% if Event.find(event.id).event_attendance.present? %>
+            Yes
+          <% else %>
+            <a href="/attend/<%= event.id %>">Attend!</a>
+          <% end %>
+        </td>
+        <td><a href="/edit/<%= event.id %>" class="editlink">Edit</a></td>
+        <td><a href="/delete/<%= event.id %>">Delete</a></td>
+
+      </tr>
+      
+    <% end %>
+</table>
+
+<!-- Add event -->
+<h3>Add a new event: </h3>
+<form id="addeventform" action="/addevent" method="post">
+<div class="addmoreevent"></div>
+<br>
+</form>
+<input id="addmoreeventbutton" type="submit" value="Gimme more fields!">
+</div>

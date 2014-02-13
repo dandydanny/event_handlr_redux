@@ -1,0 +1,20 @@
+<div class="container">
+  <p>Welcome, please login:</p>
+  <div id="warning"><%= @loginerror %></div>
+
+ <form id="loginform" action="/" method="POST">
+    <input id="textfield" type="text" name="email" placeholder="EMAIL" ><br>
+    <input id="textfield" type="password" name="password" placeholder="PASSWORD"><br>
+    <input id="loginbutton" type="submit" value="&#8594;">
+ </form>
+<p>New here? Sign up!</p>
+<div id="warning"><%= @signuperror %></div>
+ <form id="signupform" action="/signup" method="POST">
+    <input id="textfield" type="text" name="first_name" placeholder="FIRST NAME"><br>
+    <input id="textfield" type="text" name="last_name" placeholder="LAST NAME"><br>
+    <input id="textfield" type="text" name="email" placeholder="EMAIL" ><br>
+    <input id="textfield" type="text" name="birthdate" placeholder="BIRTHDAY"><br>
+    <input id="textfield" type="password" name="password" placeholder="CREATE A PASSWORD"><br>
+    <input id="signupbutton" type="submit" value="&#8594;">
+ </form>
+</div>
